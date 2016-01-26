@@ -1,6 +1,8 @@
 node_modules
-dist
+app
+.idea
 .tmp
 .sass-cache
 bower_components
-test/bower_components
+screen.css
+old_index.html
