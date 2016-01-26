@@ -1,8 +1,6 @@
-node_modules
 app
+node_modules
 .idea
 .tmp
-.sass-cache
-bower_components
 screen.css
 old_index.html
