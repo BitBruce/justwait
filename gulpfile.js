@@ -120,5 +120,7 @@ gulp.task('images', function() {
 // Vendor css
 gulp.task('css', function() {
   return gulp.src("src/css/*.css")
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(cssnano())
       .pipe(gulp.dest('app/css'));
 });
