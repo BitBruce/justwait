@@ -1,6 +1,14 @@
-/*
-// mixins/footer.scss
-*/
+/* Footer styles */
+#footer {
+  clear: both;
+  float: left;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+#footer p {
+  padding: 10px;
+  margin: 0;
+}
 
 footer {
 	// @import "c-spe-global-footer";

@@ -28,7 +28,9 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create();
 
 // gulp -> build, serve
-// gulp build -> clean, html styles scripts images
+// gulp build ->
+// -> gulp build-prod
+// -> gulp build-dev
 // gulp serve -> watch BrowserSync
 
 // Default task
@@ -37,7 +39,7 @@ gulp.task('default', ['build'], function() {
 });
 
 // Build
-gulp.task('build', ['build-prod']);
+gulp.task('build', ['build-dev']);
 
 // Build production
 gulp.task('build-prod', ['clean'], function() {
@@ -46,7 +48,7 @@ gulp.task('build-prod', ['clean'], function() {
 
 // Build test
 gulp.task('build-dev', function() {
-  gulp.start('html', 'scripts', 'images');
+  gulp.start('html', 'styles', 'scripts', 'images', 'fonts');
 });
 
 // Serve
@@ -75,7 +77,8 @@ gulp.task('clean', function() {
 // Html
 gulp.task('html', function() {
   return gulp.src("src/*.html")
-      .pipe(gulp.dest('app'));
+      .pipe(gulp.dest('app'))
+      .pipe(browserSync.stream());
 });
 
 // Fonts
@@ -92,7 +95,8 @@ gulp.task('styles', function() {
       .pipe(gulp.dest('app/css'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(cssnano())
-      .pipe(gulp.dest('app/css'));
+      .pipe(gulp.dest('app/css'))
+      .pipe(browserSync.stream());
 });
 
 // Scripts
@@ -102,12 +106,14 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('app/js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('app/js'));
+    .pipe(gulp.dest('app/js'))
+    .pipe(browserSync.stream());
 });
 
 // Images
 gulp.task('images', function() {
   return gulp.src('src/img/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('app/img'));
+    .pipe(gulp.dest('app/img'))
+    .pipe(browserSync.stream());
 });

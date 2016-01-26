@@ -1,6 +1,58 @@
-/*
-// mixins/header.scss
-*/
+/* Header styles */
+#header {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+#header {
+  border-bottom: 1px solid #000;
+}
+#header p,
+#header h1,
+#header h2 {
+  padding: 0.4em 15px 0;
+  margin: 0;
+}
+#header ul {
+  clear: left;
+  float: left;
+  width: 100%;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+#header ul li {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header ul li a {
+  display: block;
+  float: left;
+  margin: 0 0 0 1px;
+  padding: 3px 10px;
+  text-align: center;
+  background: #eee;
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  left: 15px;
+  line-height: 1.3em;
+}
+#header ul li a:hover {
+  background: #369;
+  color: #fff;
+}
+#header ul li a.active,
+#header ul li a.active:hover {
+  color: #fff;
+  background: #000;
+  font-weight: bold;
+}
+#header ul li a span {
+  display: block;
+}
 
 header {
 	// @import "c-spe-global-header";

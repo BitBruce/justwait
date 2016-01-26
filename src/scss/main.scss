@@ -1,52 +1,63 @@
 /*
 // main.scss
 // Master stylesheet for <justwait>
+// TODO: optimize gulp build time
 */
-
 /* Import Font Awesome */
-@import "font-awesome";
+//@import "font-awesome";
 
 /* Import our partials for variables and mixins */
-@import "mixins";
-@import "variables";
-
+//@import "mixins";
+//@import "variables";
+@import "header";
+//@import "page";
+@import "footer";
+@import "layout";
 body {
-	@include my-reset();
 
-	.box { @include border-radius(10px); }
+  //@include my-reset();
+  //.box { @include border-radius(10px); }
+  margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	background:#fff;
+	min-width:600px;		/* Minimum width of layout - remove line if not required */
+					/* The min-width property does not work in old versions of Internet Explorer */
+	font-size:90%;
 
-	font-size: $spe-base-font-size;
-	background: $spe-color-black;
-	color: $spe-color-white;
+  //font-size: $spe-base-font-size;
+  // background: $spe-color-black;
+  // color: $spe-color-white;
 }
-
+a {
+  color: #369;
+}
+a:hover {
+  color: #fff;
+  background: #369;
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  margin: 0.8em 0 0.2em;
+  padding: 0;
+}
+p {
+  margin: 0.4em 0 0.8em;
+  padding: 0;
+}
 img {
-	max-width: 100%;
-	height: auto;
+  margin: 10px 0 5px;
+  max-width: 100%;
+  height: auto;
 }
-
 video {
-  width: 100%    !important;
-  height: auto   !important;
+  width: 100% !important;
+  height: auto !important;
 }
-
-.page-outer {
-	width: 100%;
-	position: relative;
-	right: 0;
-
-	background: $spe-color-lt-bluegray;
-	color: $spe-color-black;
-    outline: 1px solid $spe-color-md-bluegray;
-
-	&.mobile-nav-open {
-		right: ($spe-mobile-nav-width + 1); // add one for the border
-	}
-
-	.page-inner {
-
-		//@import "header";
-		//@import "page";
-		//@import "footer";
-	}
+#ads img {
+  display: block;
+  padding-top: 10px;
 }
