@@ -1,0 +1,52 @@
+/*
+// main.scss
+// Master stylesheet for <justwait>
+*/
+
+/* Import Font Awesome */
+@import "font-awesome";
+
+/* Import our partials for variables and mixins */
+@import "mixins";
+@import "variables";
+
+body {
+	@include my-reset();
+
+	.box { @include border-radius(10px); }
+
+	font-size: $spe-base-font-size;
+	background: $spe-color-black;
+	color: $spe-color-white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+.page-outer {
+	width: 100%;
+	position: relative;
+	right: 0;
+
+	background: $spe-color-lt-bluegray;
+	color: $spe-color-black;
+    outline: 1px solid $spe-color-md-bluegray;
+
+	&.mobile-nav-open {
+		right: ($spe-mobile-nav-width + 1); // add one for the border
+	}
+
+	.page-inner {
+
+		@import "header";
+		@import "page";
+		@import "footer";
+	}
+}

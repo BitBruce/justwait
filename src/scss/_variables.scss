@@ -1,0 +1,81 @@
+// "To debug or not to debug, that is the question" -Elizabeth Reid
+$debug: false;
+
+// Color palette
+@import "color-palette";
+
+// Customization of font-awesome variables
+$fa-font-path:   "../fonts/font-awesome";
+
+/* ----------------------------------------*/
+/* Site-wide Font definitions              */
+
+// Google Fonts
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('http://fonts.googleapis.com/css?family=Oswald:300');
+
+// Font variables
+
+$font-family-open-sans: 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-gotham-narrow: 'Gotham Narrow';
+$font-family-oswald: 'Oswald', HelveticaNeue, 'Helvetica Neue', sans-serif;
+
+$font-family-default: $font-family-open-sans;
+
+// Font definitions per section
+$spe-base-font-size: 10px;
+$spe-text-font-size: 15px;
+$spe-text-line-height: 19px;
+
+/* ----------------------------------------*/
+/* Site-wide padding/margin definitions    */
+
+$spe-body-gutter: 5%;
+$spe-section-padding: 20px;
+$spe-section-margin: 25px;
+$spe-tile-padding: 15px;
+$spe-tile-margin: 20px;
+
+/* ----------------------------------------*/
+/* Site-wide Grid breakpoint definitions   */
+
+$grid-columns: 12; // Set to the default for the moment
+$grid-gutter-width: 0; // Most of the layouts do not need gutters
+$grid-float-breakpoint: 768px; // Changing the point at which we switch to hamburger nav
+
+/* Device widths */
+$mobile-portrait: 320px;
+$mobile-landscape: 480px;
+$sm-tablet-portrait: 600px;
+$tablet-portrait: 768px;         // $screen-sm-min
+$sm-tablet-landscape: 800px;
+                                // $screen-md-min
+$tablet-landscape: 1024px;
+$sm-desktop: 1024px;
+$md-desktop: 1200px;            // $screen-lg-min
+$lg-desktop: 1600px;
+
+/* Mobile Navigation Width */
+$spe-mobile-nav-width: $mobile-portrait;
+
+/* Media breakpoints */
+$spe-media-xxs: $mobile-portrait;
+$spe-media-xs: $mobile-landscape;
+$spe-media-sm: $tablet-portrait;
+$spe-media-md: $tablet-landscape;
+$spe-media-lg: $md-desktop;
+$spe-media-xl: $lg-desktop;
+
+$spe-media-screen-xxs: "screen and (min-width: #{$spe-media-xxs})";
+$spe-media-screen-xs: "screen and (min-width: #{$spe-media-xs})";
+$spe-media-screen-sm: "screen and (min-width: #{$spe-media-sm})";
+$spe-media-screen-md: "screen and (min-width: #{$spe-media-md})";
+$spe-media-screen-lg: "screen and (min-width: #{$spe-media-lg})";
+$spe-media-screen-xl: "screen and (min-width: #{$spe-media-xl})";
+
+$spe-media-screen-xs-max: "screen and (max-width: (#{$spe-media-sm - 1}))";
+$spe-media-screen-sm-max: "screen and (max-width: (#{$spe-media-md - 1}))";
+$spe-media-screen-md-max: "screen and (max-width: (#{$spe-media-lg - 1}))";
+$spe-media-screen-lg-max: "screen and (max-width: (#{$spe-media-xl - 1}))";
+
+$spe-media-nav-breakpoint: "screen and (min-width: #{$grid-float-breakpoint})";
