@@ -39,7 +39,7 @@ gulp.task('default', ['build'], function() {
 });
 
 // Build
-gulp.task('build', ['build-dev']);
+gulp.task('build', ['build-prod']);
 
 // Build production
 gulp.task('build-prod', ['clean'], function() {
@@ -77,8 +77,7 @@ gulp.task('clean', function() {
 // Html
 gulp.task('html', function() {
   return gulp.src("src/*.html")
-      .pipe(gulp.dest('app'))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest('app'));
 });
 
 // Fonts
@@ -88,7 +87,7 @@ gulp.task('fonts', function() {
 });
 
 // Styles
-gulp.task('styles', function() {
+gulp.task('styles', ['css'], function() {
   return gulp.src("src/scss/*.scss")
       .pipe(sass())
       .pipe(autoprefixer('last 2 version'))
@@ -116,4 +115,10 @@ gulp.task('images', function() {
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('app/img'))
     .pipe(browserSync.stream());
+});
+
+// Vendor css
+gulp.task('css', function() {
+  return gulp.src("src/css/*.css")
+      .pipe(gulp.dest('app/css'));
 });

@@ -1,0 +1,19 @@
+{
+  "name": "justwait",
+  "version": "1.0.0",
+  "description": "Kel'Thuzad guild website",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "flexboxgrid": "^6.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinsonbd2/justwait.git"
+  },
+  "author": "Qx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinsonbd2/justwait/issues"
+  }
+}
