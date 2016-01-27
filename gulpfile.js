@@ -1,7 +1,7 @@
 /*!
  * gulp
  * $ npm install gulp-sass gulp-autoprefixer gulp-cssnano gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-cache browser-sync del --save-dev
- * https://markgoodyear.com/2014/01/getting-started-with-gulp/
+ * Inspired by https://markgoodyear.com/2014/01/getting-started-with-gulp/
  */
 
 /*
@@ -27,12 +27,6 @@ var gulp = require('gulp'),
     del = require('del')
     browserSync = require('browser-sync').create();
 
-// gulp -> build, serve
-// gulp build ->
-// -> gulp build-prod
-// -> gulp build-dev
-// gulp serve -> watch BrowserSync
-
 // Default task
 gulp.task('default', ['build'], function() {
   gulp.start('serve');
@@ -56,28 +50,32 @@ gulp.task('serve', function() {
 
   // Watch src files in src/
   gulp.watch('src/scss/*.scss', ['styles']);
+  gulp.watch("src/css/*.css", ['styles']);
   gulp.watch('src/js/*.js', ['scripts']);
   gulp.watch('src/img/*', ['images']);
 
   // Create BrowserSync server
   browserSync.init({
-      server: "./app"
+      server: {
+        baseDir: "./app",
+        index: "html/index.html"
+      },
+      port: 6112 //War3
   });
 
   // Watch any files in app/, reload on change
-  gulp.watch("app/css/*.css", ['styles']);
   gulp.watch("app/html/*.html").on('change', browserSync.reload);
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del(['app/css', 'app/js', 'app/img', 'app/fonts', 'app/html']);
+  return del(['app/*']);
 });
 
 // Html
 gulp.task('html', function() {
   return gulp.src("src/html/*.html")
-      .pipe(gulp.dest('app'));
+      .pipe(gulp.dest('app/html'));
 });
 
 // Fonts
@@ -87,7 +85,7 @@ gulp.task('fonts', function() {
 });
 
 // Styles
-gulp.task('styles', ['css'], function() {
+gulp.task('styles', ['vendorcss'], function() {
   return gulp.src("src/scss/*.scss")
       .pipe(sass())
       .pipe(autoprefixer('last 2 version'))
@@ -99,7 +97,7 @@ gulp.task('styles', ['css'], function() {
 });
 
 // Scripts
-gulp.task('scripts', function() {
+gulp.task('scripts', ['vendorjs'], function() {
   return gulp.src('src/js/*.js')
     .pipe(concat('main.js'))
     .pipe(gulp.dest('app/js'))
@@ -118,9 +116,15 @@ gulp.task('images', function() {
 });
 
 // Vendor css (called just before Styles)
-gulp.task('css', function() {
+gulp.task('vendorcss', function() {
   return gulp.src("src/css/*.css")
       .pipe(rename({ suffix: '.min' }))
       .pipe(cssnano())
       .pipe(gulp.dest('app/css'));
+});
+
+// Vendor js (called just before Scripts)
+gulp.task('vendorjs', function() {
+  return gulp.src("src/js/vendor/*")
+      .pipe(gulp.dest('app/js'));
 });
