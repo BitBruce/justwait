@@ -1,6 +1,6 @@
 /*!
  * gulp
- * $ npm install gulp-sass gulp-autoprefixer gulp-cssnano gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-cache browser-sync del --save-dev
+ * $ npm install gulp-util gulp-sass gulp-autoprefixer gulp-cssnano gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-cache browser-sync del --save-dev
  * Inspired by https://markgoodyear.com/2014/01/getting-started-with-gulp/
  */
 
@@ -16,6 +16,7 @@
 
 // Load plugins
 var gulp = require('gulp'),
+    gutil = require('gulp-util'), // Use for logging
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
@@ -48,7 +49,7 @@ gulp.task('build-dev', function() {
 // Serve
 gulp.task('serve', function() {
 
-  // Watch src files in src/
+  // Watch src files
   gulp.watch('src/scss/*.scss', ['styles']);
   gulp.watch("src/css/*.css", ['styles']);
   gulp.watch('src/js/*.js', ['scripts']);
@@ -64,7 +65,7 @@ gulp.task('serve', function() {
   });
 
   // Watch any files in app/, reload on change
-  gulp.watch("app/html/*.html").on('change', browserSync.reload);
+  gulp.watch("app/*").on('change', browserSync.reload);
 });
 
 // Clean
@@ -85,26 +86,46 @@ gulp.task('fonts', function() {
 });
 
 // Styles
-gulp.task('styles', ['vendorcss'], function() {
-  return gulp.src("src/scss/*.scss")
-      .pipe(sass())
-      .pipe(autoprefixer('last 2 version'))
-      .pipe(gulp.dest('app/css'))
+gulp.task('styles', function() {
+  // Vendor css
+  var stream = gulp.src("src/css/*.css")
       .pipe(rename({ suffix: '.min' }))
       .pipe(cssnano())
-      .pipe(gulp.dest('app/css'))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest('app/css'));
+
+  stream.on('end', function() {
+    // My scss
+    return gulp.src("src/scss/*.scss")
+        .pipe(sass())
+        .pipe(autoprefixer('last 2 version'))
+        .pipe(gulp.dest('app/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('app/css'))
+        .pipe(browserSync.stream());
+  });
+
+  return;
 });
 
 // Scripts
-gulp.task('scripts', ['vendorjs'], function() {
-  return gulp.src('src/js/*.js')
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('app/js'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
-    .pipe(gulp.dest('app/js'))
-    .pipe(browserSync.stream());
+gulp.task('scripts', function() {
+  // Vendor js
+  var stream = gulp.src("src/js/vendor/*")
+      .pipe(gulp.dest('app/js'));
+
+  stream.on('end', function() {
+    // My js
+    return gulp.src('src/js/*.js')
+      .pipe(concat('main.js'))
+      .pipe(gulp.dest('app/js'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(uglify())
+      .pipe(gulp.dest('app/js'))
+      .pipe(browserSync.stream());
+  });
+
+  return;
 });
 
 // Images
@@ -115,6 +136,7 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 });
 
+/*
 // Vendor css (called just before Styles)
 gulp.task('vendorcss', function() {
   return gulp.src("src/css/*.css")
@@ -128,3 +150,4 @@ gulp.task('vendorjs', function() {
   return gulp.src("src/js/vendor/*")
       .pipe(gulp.dest('app/js'));
 });
+*/
