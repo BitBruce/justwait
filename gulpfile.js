@@ -117,7 +117,7 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 });
 
-// Vendor css
+// Vendor css (called just before Styles)
 gulp.task('css', function() {
   return gulp.src("src/css/*.css")
       .pipe(rename({ suffix: '.min' }))
