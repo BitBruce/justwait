@@ -66,17 +66,17 @@ gulp.task('serve', function() {
 
   // Watch any files in app/, reload on change
   gulp.watch("app/css/*.css", ['styles']);
-  gulp.watch("app/*.html").on('change', browserSync.reload);
+  gulp.watch("app/html/*.html").on('change', browserSync.reload);
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del(['app/css', 'app/js', 'app/img', 'app/fonts', 'app/*.html']);
+  return del(['app/css', 'app/js', 'app/img', 'app/fonts', 'app/html']);
 });
 
 // Html
 gulp.task('html', function() {
-  return gulp.src("src/*.html")
+  return gulp.src("src/html/*.html")
       .pipe(gulp.dest('app'));
 });
 
