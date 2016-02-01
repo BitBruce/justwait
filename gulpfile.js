@@ -54,6 +54,7 @@ gulp.task('serve', function() {
   gulp.watch("src/css/*.css", ['styles']);
   gulp.watch('src/js/*.js', ['scripts']);
   gulp.watch('src/img/*', ['images']);
+  gulp.watch('src/html/*', ['html']);
 
   // Create BrowserSync server
   browserSync.init({
@@ -70,19 +71,21 @@ gulp.task('serve', function() {
 
 // Clean
 gulp.task('clean', function() {
-  return del(['app/*']);
+  return del(['app']);
 });
 
 // Html
 gulp.task('html', function() {
   return gulp.src("src/html/*.html")
-      .pipe(gulp.dest('app/html'));
+      .pipe(gulp.dest('app/html'))
+      .pipe(browserSync.stream());
 });
 
 // Fonts
 gulp.task('fonts', function() {
   return gulp.src("src/fonts/*")
-      .pipe(gulp.dest('app/fonts'));
+      .pipe(gulp.dest('app/fonts'))
+      .pipe(browserSync.stream());
 });
 
 // Styles
