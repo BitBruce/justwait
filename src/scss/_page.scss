@@ -6,7 +6,7 @@
 }
 
 .layout, .page {
-  background-color: $alliance-lb;
+  background-color: $my-color-lt-blue;
 }
 
 .box {
@@ -17,6 +17,10 @@
 h2 {
   line-height: .9;
   color: $alliance-gold;
+}
+
+h3 {
+  color: $my-color-md-blue;
 }
 
 // Custom
@@ -45,6 +49,7 @@ h2 {
   width: 300px;
   height: 200px;
   text-align: center;
+  box-shadow: 2px 2px 5px #000, -2px -2px 5px #000;
 }
 
 .news {

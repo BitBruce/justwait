@@ -2103,7 +2103,7 @@
     display: inherit; } }
 
 .layout, .page {
-  background-color: #bce7fd; }
+  background-color: #B2D0FF; }
 
 .box {
   background: none;
@@ -2112,6 +2112,9 @@
 h2 {
   line-height: .9;
   color: #fee433; }
+
+h3 {
+  color: #326EC8; }
 
 .col-xs {
   margin-top: 1%; }
@@ -2132,7 +2135,8 @@ h2 {
 .hero .hero-image {
   width: 300px;
   height: 200px;
-  text-align: center; }
+  text-align: center;
+  box-shadow: 2px 2px 5px #000, -2px -2px 5px #000; }
 
 .news h2 {
   font-size: 18px;
