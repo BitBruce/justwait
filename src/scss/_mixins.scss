@@ -13,125 +13,65 @@
           border-radius: $radius;
 }
 
-@mixin spe-contain-box() {
+@mixin my-contain-box() {
 	& > *:first-child { margin-top: 0; }
 	& > *:last-child { margin-bottom: 0; }
 }
 
-@mixin spe-list-plain() {
+@mixin my-list-plain() {
 	@include my-reset();
 	list-style: none;
 }
 
+@mixin my-list-plain-col3() {
+  @include my-list-plain();
+
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+
 /* Site-wide font definitions */
-@mixin spe-font($font-size, $base-size: $spe-base-font-size, $line-height: $font-size, $font-family: $font-family-default, $font-weight: normal ) {
+@mixin my-font($font-size, $base-size: $my-base-font-size, $line-height: $font-size, $font-family: $font-family-default, $font-weight: normal ) {
     font-family: $font-family;
     font-size: ($font-size * (1em / $base-size));
     line-height: ($line-height * (1em / $font-size));
     font-weight: $font-weight;
 }
 
-@mixin spe-text-font($base-size: $spe-base-font-size) {
-	@include spe-font($font-size: $spe-text-font-size, $base-size: $base-size, $line-height: $spe-text-line-height);
+@mixin my-text-font($base-size: $my-base-font-size) {
+	@include my-font($font-size: $my-text-font-size, $base-size: $base-size, $line-height: $my-text-line-height);
 }
 
-@mixin spe-title-font($base-size: $spe-base-font-size) {
-	@include spe-font($font-size: 18px, $base-size: $base-size, $line-height: $spe-text-line-height, $font-weight: bold);
+@mixin my-title-font($base-size: $my-base-font-size) {
+	@include my-font($font-size: 18px, $base-size: $base-size, $line-height: $my-text-line-height, $font-weight: bold);
 
-	@media #{$spe-media-screen-xs} { font-size: (18px * (1em / $base-size)); }
-	@media #{$spe-media-screen-sm} { font-size: (22px * (1em / $base-size)); }
-	@media #{$spe-media-screen-md} { font-size: (24px * (1em / $base-size)); }
-	@media #{$spe-media-screen-lg} { font-size: (26px * (1em / $base-size)); }
+	@media #{$my-media-screen-xs} { font-size: (18px * (1em / $base-size)); }
+	@media #{$my-media-screen-sm} { font-size: (22px * (1em / $base-size)); }
+	@media #{$my-media-screen-md} { font-size: (24px * (1em / $base-size)); }
+	@media #{$my-media-screen-lg} { font-size: (26px * (1em / $base-size)); }
 }
 
-@mixin spe-headline-font($base-size: $spe-base-font-size) {
-	@include spe-font($font-size: 16px, $base-size: $base-size, $line-height: $spe-text-line-height, $font-weight: bold);
+@mixin my-headline-font($base-size: $my-base-font-size) {
+	@include my-font($font-size: 16px, $base-size: $base-size, $line-height: $my-text-line-height, $font-weight: bold);
 
-	@media #{$spe-media-screen-xs} { font-size: (16px * (1em / $base-size)); }
-	@media #{$spe-media-screen-sm} { font-size: (20px * (1em / $base-size)); }
-	@media #{$spe-media-screen-md} { font-size: (22px * (1em / $base-size)); }
-	@media #{$spe-media-screen-lg} { font-size: (24px * (1em / $base-size)); }
+	@media #{$my-media-screen-xs} { font-size: (16px * (1em / $base-size)); }
+	@media #{$my-media-screen-sm} { font-size: (20px * (1em / $base-size)); }
+	@media #{$my-media-screen-md} { font-size: (22px * (1em / $base-size)); }
+	@media #{$my-media-screen-lg} { font-size: (24px * (1em / $base-size)); }
 }
 
-@mixin spe-subheading-font($base-size: $spe-base-font-size) {
-	@include spe-font($font-size: $spe-text-font-size, $base-size: $base-size, $line-height: $spe-text-line-height, $font-weight: bold);
+@mixin my-subheading-font($base-size: $my-base-font-size) {
+	@include my-font($font-size: $my-text-font-size, $base-size: $base-size, $line-height: $my-text-line-height, $font-weight: bold);
 
-	@media #{$spe-media-screen-xs} { font-size: ($spe-text-font-size * (1em / $base-size)); }
-	@media #{$spe-media-screen-sm} { font-size: (($spe-text-font-size + 1) * (1em / $base-size)); }
-	@media #{$spe-media-screen-md} { font-size: (($spe-text-font-size + 2) * (1em / $base-size)); }
-	@media #{$spe-media-screen-lg} { font-size: (($spe-text-font-size + 3) * (1em / $base-size)); }
+	@media #{$my-media-screen-xs} { font-size: ($my-text-font-size * (1em / $base-size)); }
+	@media #{$my-media-screen-sm} { font-size: (($my-text-font-size + 1) * (1em / $base-size)); }
+	@media #{$my-media-screen-md} { font-size: (($my-text-font-size + 2) * (1em / $base-size)); }
+	@media #{$my-media-screen-lg} { font-size: (($my-text-font-size + 3) * (1em / $base-size)); }
 }
 
-@mixin spe-dateline-font($base-size: $spe-base-font-size) {
-	@include spe-font($font-size: 12px, $base-size: $base-size, $line-height: 22px, $font-weight: bold);
+@mixin my-dateline-font($base-size: $my-base-font-size) {
+	@include my-font($font-size: 12px, $base-size: $base-size, $line-height: 22px, $font-weight: bold);
 	text-transform: uppercase;
 	letter-spacing: 1px;
-}
-
-/* Icons - Font Awesome */
-%spe-icon-first {
-	@extend .fa;
-	@extend .fa-angle-double-left;
-}
-
-%spe-icon-prev {
-	//@extend .glyphicon;
-	//@extend .glyphicon-menu-left;
-	@extend .fa;
-	@extend .fa-angle-left;
-}
-
-%spe-icon-next {
-	@extend .fa;
-	@extend .fa-angle-right;
-}
-
-%spe-icon-last {
-	@extend .fa;
-	@extend .fa-angle-double-right;
-}
-
-%spe-icon-circle-arrow-right {
-	@extend .fa;
-	@extend .fa-arrow-circle-o-right;
-}
-
-%spe-icon-facebook {
-	@extend .fa;
-	@extend .fa-facebook;
-}
-
-%spe-icon-linkedin {
-	@extend .fa;
-	@extend .fa-linkedin;
-}
-
-%spe-icon-twitter {
-	@extend .fa;
-	@extend .fa-twitter;
-}
-
-%spe-icon-youtube {
-	@extend .glyphicon;
-	@extend .glyphicon-play;
-}
-
-%spe-icon-google {
-	@extend .fa;
-	@extend .fa-google;
-}
-
-%spe-icon-instagram {
-	@extend .fa;
-	@extend .fa-instagram;
-}
-
-%spe-icon-connect {
-	@extend .fa;
-	@extend .fa-comment;
-}
-
-%spe-icon-email {
-	@extend .fa;
-	@extend .fa-envelope;
 }

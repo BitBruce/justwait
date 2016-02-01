@@ -3,13 +3,15 @@
 // Master stylesheet for <justwait>
 // TODO: optimize gulp build time
 */
-/* Import Font Awesome */
-//@import "font-awesome";
 
-/* Import our partials for variables and mixins */
-//@import "mixins";
-//@import "variables";
-//@import "header";
-//@import "page";
-//@import "footer";
-//@import "layout";
+/* Import Font Awesome */
+@import "fonts";
+
+// Color palette
+@import "color-palette";
+
+/* Import our variables and mixins */
+@import "mixins";
+@import "variables";
+
+@import "page";

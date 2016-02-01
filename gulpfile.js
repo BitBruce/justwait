@@ -59,32 +59,32 @@ gulp.task('serve', function() {
   // Create BrowserSync server
   browserSync.init({
       server: {
-        baseDir: "./app",
+        baseDir: "./target",
         index: "html/index.html"
       },
       port: 6112 //War3
   });
 
-  // Watch any files in app/, reload on change
-  gulp.watch("app/*").on('change', browserSync.reload);
+  // Watch any files in target/, reload on change
+  gulp.watch("target/*").on('change', browserSync.reload);
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del(['app']);
+  return del(['target']);
 });
 
 // Html
 gulp.task('html', function() {
   return gulp.src("src/html/*.html")
-      .pipe(gulp.dest('app/html'))
+      .pipe(gulp.dest('target/html'))
       .pipe(browserSync.stream());
 });
 
 // Fonts
 gulp.task('fonts', function() {
   return gulp.src("src/fonts/*")
-      .pipe(gulp.dest('app/fonts'))
+      .pipe(gulp.dest('target/fonts'))
       .pipe(browserSync.stream());
 });
 
@@ -94,17 +94,17 @@ gulp.task('styles', function() {
   var stream = gulp.src("src/css/*.css")
       .pipe(rename({ suffix: '.min' }))
       .pipe(cssnano())
-      .pipe(gulp.dest('app/css'));
+      .pipe(gulp.dest('target/css'));
 
   stream.on('end', function() {
     // My scss
     return gulp.src("src/scss/*.scss")
         .pipe(sass())
         .pipe(autoprefixer('last 2 version'))
-        .pipe(gulp.dest('app/css'))
+        .pipe(gulp.dest('target/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        .pipe(gulp.dest('app/css'))
+        .pipe(gulp.dest('target/css'))
         .pipe(browserSync.stream());
   });
 
@@ -115,16 +115,16 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
   // Vendor js
   var stream = gulp.src("src/js/vendor/*")
-      .pipe(gulp.dest('app/js'));
+      .pipe(gulp.dest('target/js'));
 
   stream.on('end', function() {
     // My js
     return gulp.src('src/js/*.js')
       .pipe(concat('main.js'))
-      .pipe(gulp.dest('app/js'))
+      .pipe(gulp.dest('target/js'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(uglify())
-      .pipe(gulp.dest('app/js'))
+      .pipe(gulp.dest('target/js'))
       .pipe(browserSync.stream());
   });
 
@@ -135,7 +135,7 @@ gulp.task('scripts', function() {
 gulp.task('images', function() {
   return gulp.src('src/img/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('app/img'))
+    .pipe(gulp.dest('target/img'))
     .pipe(browserSync.stream());
 });
 
@@ -145,12 +145,12 @@ gulp.task('vendorcss', function() {
   return gulp.src("src/css/*.css")
       .pipe(rename({ suffix: '.min' }))
       .pipe(cssnano())
-      .pipe(gulp.dest('app/css'));
+      .pipe(gulp.dest('target/css'));
 });
 
 // Vendor js (called just before Scripts)
 gulp.task('vendorjs', function() {
   return gulp.src("src/js/vendor/*")
-      .pipe(gulp.dest('app/js'));
+      .pipe(gulp.dest('target/js'));
 });
 */

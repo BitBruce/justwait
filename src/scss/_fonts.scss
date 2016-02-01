@@ -1,0 +1,69 @@
+/* Icons - Font Awesome */
+@import "font-awesome/font-awesome";
+
+%spe-icon-first {
+	@extend .fa;
+	@extend .fa-angle-double-left;
+}
+
+%spe-icon-prev {
+	//@extend .glyphicon;
+	//@extend .glyphicon-menu-left;
+	@extend .fa;
+	@extend .fa-angle-left;
+}
+
+%spe-icon-next {
+	@extend .fa;
+	@extend .fa-angle-right;
+}
+
+%spe-icon-last {
+	@extend .fa;
+	@extend .fa-angle-double-right;
+}
+
+%spe-icon-circle-arrow-right {
+	@extend .fa;
+	@extend .fa-arrow-circle-o-right;
+}
+
+%spe-icon-facebook {
+	@extend .fa;
+	@extend .fa-facebook;
+}
+
+%spe-icon-linkedin {
+	@extend .fa;
+	@extend .fa-linkedin;
+}
+
+%spe-icon-twitter {
+	@extend .fa;
+	@extend .fa-twitter;
+}
+
+%spe-icon-youtube {
+	@extend .glyphicon;
+	@extend .glyphicon-play;
+}
+
+%spe-icon-google {
+	@extend .fa;
+	@extend .fa-google;
+}
+
+%spe-icon-instagram {
+	@extend .fa;
+	@extend .fa-instagram;
+}
+
+%spe-icon-connect {
+	@extend .fa;
+	@extend .fa-comment;
+}
+
+%spe-icon-email {
+	@extend .fa;
+	@extend .fa-envelope;
+}

@@ -1,9 +1,6 @@
 // "To debug or not to debug, that is the question" -Elizabeth Reid
 $debug: true;
 
-// Color palette
-@import "color-palette";
-
 // Customization of font-awesome variables
 $fa-font-path:   "../fonts/font-awesome";
 
@@ -23,18 +20,18 @@ $font-family-oswald: 'Oswald', HelveticaNeue, 'Helvetica Neue', sans-serif;
 $font-family-default: $font-family-open-sans;
 
 // Font definitions per section
-$spe-base-font-size: 10px;
-$spe-text-font-size: 15px;
-$spe-text-line-height: 19px;
+$my-base-font-size: 10px;
+$my-text-font-size: 15px;
+$my-text-line-height: 19px;
 
 /* ----------------------------------------*/
 /* Site-wide padding/margin definitions    */
 
-$spe-body-gutter: 5%;
-$spe-section-padding: 20px;
-$spe-section-margin: 25px;
-$spe-tile-padding: 15px;
-$spe-tile-margin: 20px;
+$my-body-gutter: 5%;
+$my-section-padding: 20px;
+$my-section-margin: 25px;
+$my-tile-padding: 15px;
+$my-tile-margin: 20px;
 
 /* ----------------------------------------*/
 /* Site-wide Grid breakpoint definitions   */
@@ -56,26 +53,26 @@ $md-desktop: 1200px;            // $screen-lg-min
 $lg-desktop: 1600px;
 
 /* Mobile Navigation Width */
-$spe-mobile-nav-width: $mobile-portrait;
+$my-mobile-nav-width: $mobile-portrait;
 
 /* Media breakpoints */
-$spe-media-xxs: $mobile-portrait;
-$spe-media-xs: $mobile-landscape;
-$spe-media-sm: $tablet-portrait;
-$spe-media-md: $tablet-landscape;
-$spe-media-lg: $md-desktop;
-$spe-media-xl: $lg-desktop;
+$my-media-xxs: $mobile-portrait;
+$my-media-xs: $mobile-landscape;
+$my-media-sm: $tablet-portrait;
+$my-media-md: $tablet-landscape;
+$my-media-lg: $md-desktop;
+$my-media-xl: $lg-desktop;
 
-$spe-media-screen-xxs: "screen and (min-width: #{$spe-media-xxs})";
-$spe-media-screen-xs: "screen and (min-width: #{$spe-media-xs})";
-$spe-media-screen-sm: "screen and (min-width: #{$spe-media-sm})";
-$spe-media-screen-md: "screen and (min-width: #{$spe-media-md})";
-$spe-media-screen-lg: "screen and (min-width: #{$spe-media-lg})";
-$spe-media-screen-xl: "screen and (min-width: #{$spe-media-xl})";
+$my-media-screen-xxs: "screen and (min-width: #{$my-media-xxs})";
+$my-media-screen-xs: "screen and (min-width: #{$my-media-xs})";
+$my-media-screen-sm: "screen and (min-width: #{$my-media-sm})";
+$my-media-screen-md: "screen and (min-width: #{$my-media-md})";
+$my-media-screen-lg: "screen and (min-width: #{$my-media-lg})";
+$my-media-screen-xl: "screen and (min-width: #{$my-media-xl})";
 
-$spe-media-screen-xs-max: "screen and (max-width: (#{$spe-media-sm - 1}))";
-$spe-media-screen-sm-max: "screen and (max-width: (#{$spe-media-md - 1}))";
-$spe-media-screen-md-max: "screen and (max-width: (#{$spe-media-lg - 1}))";
-$spe-media-screen-lg-max: "screen and (max-width: (#{$spe-media-xl - 1}))";
+$my-media-screen-xs-max: "screen and (max-width: (#{$my-media-sm - 1}))";
+$my-media-screen-sm-max: "screen and (max-width: (#{$my-media-md - 1}))";
+$my-media-screen-md-max: "screen and (max-width: (#{$my-media-lg - 1}))";
+$my-media-screen-lg-max: "screen and (max-width: (#{$my-media-xl - 1}))";
 
-$spe-media-nav-breakpoint: "screen and (min-width: #{$grid-float-breakpoint})";
+$my-media-nav-breakpoint: "screen and (min-width: #{$grid-float-breakpoint})";
