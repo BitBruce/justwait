@@ -34,14 +34,14 @@ h3 {
 }
 
 .pane {
-  background-color: $alliance-blue;
-  border: 3px groove $alliance-gold;
-  border-radius: 20px;
+  // background-color: $alliance-blue;
+  // border: 3px groove $alliance-gold;
+  // border-radius: 20px;
 }
 
 .hero {
   margin: 5% 0;
-  background-color: $alliance-blue;
+  // background-color: $alliance-blue;
   border: none;
 }
 
@@ -63,7 +63,7 @@ h3 {
 
 .news > .scroll {
   color: $alliance-blue;
-  background-color: $alliance-gold;
+  // background-color: $alliance-gold;
   height: 214px;
   overflow: auto;
 }
@@ -86,9 +86,22 @@ h3 {
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3;
   }
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 12px;
 }

@@ -2122,14 +2122,8 @@ h3 {
     margin-left: 1%;
     margin-right: 1%; }
 
-.pane {
-  background-color: #0a448e;
-  border: 3px groove #fee433;
-  border-radius: 20px; }
-
 .hero {
   margin: 5% 0;
-  background-color: #0a448e;
   border: none; }
 
 .hero .hero-image {
@@ -2146,7 +2140,6 @@ h3 {
 
 .news > .scroll {
   color: #0a448e;
-  background-color: #fee433;
   height: 214px;
   overflow: auto; }
 
@@ -2156,6 +2149,35 @@ h3 {
 .roster ul, .progress ul, .ranking ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   -moz-column-count: 3;
   -webkit-column-count: 3;
   column-count: 3; }
+
+h2 {
+  font-size: 16px; }
+
+h3 {
+  font-size: 14px; }
+
+p {
+  font-size: 12px; }
+
+/* For the "inset" look only */
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 12px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px #0a448e;
+  border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #fee433;
+  -webkit-box-shadow: inset 0 0 2px #0a448e; }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4); }

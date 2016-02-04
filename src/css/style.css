@@ -6,21 +6,9 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
   background: #EEE;
-  line-height: 1.4rem;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Gibson", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #001A33;
-}
-h2 {
-  font-size: 2rem;
-  margin: 1rem 0;
-}
+
+
 :focus {
   outline-color: transparent;
   outline-style: none;
@@ -108,13 +96,6 @@ code {
 .menu-button-icon {
   width: 2rem;
   height: 2rem;
-}
-.hero {
-  box-sizing: border-box;
-  padding: 2rem;
-  background: #FFF;
-  border: 1px solid #FFF;
-  border-radius: 2px;
 }
 .hero-headline {
   font-size: 3rem;
