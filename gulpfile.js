@@ -51,7 +51,7 @@ gulp.task('serve', function() {
 
   // Watch src files
   gulp.watch('src/scss/*.scss', ['styles']);
-  gulp.watch("src/css/*.css", ['styles']);
+  gulp.watch('src/css/*.css', ['styles']);
   gulp.watch('src/js/*.js', ['scripts']);
   gulp.watch('src/img/*', ['images']);
   gulp.watch('src/html/*', ['html']);
@@ -134,23 +134,8 @@ gulp.task('scripts', function() {
 // Images
 gulp.task('images', function() {
   return gulp.src('src/img/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    // .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('target/img'))
     .pipe(browserSync.stream());
 });
-
-/*
-// Vendor css (called just before Styles)
-gulp.task('vendorcss', function() {
-  return gulp.src("src/css/*.css")
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(cssnano())
-      .pipe(gulp.dest('target/css'));
-});
-
-// Vendor js (called just before Scripts)
-gulp.task('vendorjs', function() {
-  return gulp.src("src/js/vendor/*")
-      .pipe(gulp.dest('target/js'));
-});
-*/

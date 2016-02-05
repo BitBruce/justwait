@@ -1,10 +1,6 @@
 /*
 // color-palette.scss
 */
-$alliance-blue: #0a448e;
-$alliance-gold: #fee433;
-$alliance-lb: #bce7fd;
-
 $white: #FFFFFF;
 $black: #000000;
 $dark-gray: #282828;
@@ -15,9 +11,26 @@ $my-darkgreen: #008000;
 $my-lightgreen: #00CC00;
 $my-darkred: #CC0000;
 
+// WoW
+$alliance-blue: #0a448e;
+$alliance-gold: #fee433;
+$alliance-lb: #bce7fd;
 
+$alliance-gold-alpha: rgba(254, 228, 51, .5);
 
-
+// WoW: Class Colors
+$wow-class-dk: #C41F3B;
+$wow-class-dh: #A330C9;
+$wow-class-druid: #FF7D0A;
+$wow-class-hunter: #ABD473;
+$wow-class-mage: #69CCF0;
+$wow-class-monk: #00FF96;
+$wow-class-paladin: #F58CBA;
+$wow-class-priest: #FFFFFF;
+$wow-class-rogue: #FFF569;
+$wow-class-shaman: #0070DE;
+$wow-class-warlock: #9482C9;
+$wow-class-warrior: #C79C6E;
 
 
 
