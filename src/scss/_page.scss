@@ -53,6 +53,18 @@ p {
 }
 
 // Custom /////////////////////////////////////////////////////////
+@import "roster";
+
+ul.col3 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+
 .pane {
   // background-color: $alliance-blue;
   // border: 3px groove $alliance-gold;
@@ -97,23 +109,5 @@ p {
   img {
     border-radius: 50%;
     width: 64px;
-  }
-}
-
-.ranking {
-
-}
-
-@import "roster";
-
-.roster, .progress, .ranking {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
   }
 }

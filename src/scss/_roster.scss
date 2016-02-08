@@ -28,280 +28,299 @@ $temp-font-size: 16px;
     font-size: $temp-font-size;
   }
 
-  li {
-    list-style: none;
-    text-align: left;
+  ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+    list-style-type: none;
 
-    &:before {
-      @include beforeClass();
+    &.officers {
+      font-size: 20px;
+      font-weight: bold;
     }
+  }
 
-    span:before {
-      @include beforeClassSpan();
+  .core {
+    ul {
+      display: inline;
     }
+    li {
+      list-style: none;
+      text-align: left;
 
-    // WoW Classes
-    &.dk {
-      color: $wow-class-dk;
       &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_deathknight.jpg');
+        @include beforeClass();
       }
-      &.blood span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_deathknight_bloodpresence.gif');
-        }
-      }
-      &.frost span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_deathknight_frostpresence.gif');
-        }
-      }
-      &.unholy span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_deathknight_unholypresence.gif');
-        }
-      }
-    }
 
-    // Demon Hunter $wow-class-dh
-    &.dh {
-      color: $wow-class-dh;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_demonhunter.jpg');
+      span:before {
+        @include beforeClassSpan();
       }
-      &.havoc span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_demonhunter_specdps.gif');
-        }
-      }
-      &.vengeance span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_demonhunter_spectank.gif');
-        }
-      }
-    }
 
-    &.druid {
-      color: $wow-class-druid;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_druid.jpg');
-      }
-      &.balance span {
+      // WoW Classes
+      &.dk {
+        color: $wow-class-dk;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_starfall.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_deathknight.jpg');
+        }
+        &.blood span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_deathknight_bloodpresence.gif');
+          }
+        }
+        &.frost span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_deathknight_frostpresence.gif');
+          }
+        }
+        &.unholy span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_deathknight_unholypresence.gif');
+          }
         }
       }
-      &.feral span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_druid_catform.gif');
-        }
-      }
-      &.guardian span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_racial_bearform.gif');
-        }
-      }
-      &.restoration span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_healingtouch.gif');
-        }
-      }
-    }
 
-    &.hunter {
-      color: $wow-class-hunter;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_hunter.jpg');
-      }
-      &.beast span {
+      // Demon Hunter $wow-class-dh
+      &.dh {
+        color: $wow-class-dh;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_beastialdiscipline.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_demonhunter.jpg');
+        }
+        &.havoc span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_demonhunter_specdps.gif');
+          }
+        }
+        &.vengeance span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_demonhunter_spectank.gif');
+          }
         }
       }
-      &.marksmanship span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_focusedaim.gif');
-        }
-      }
-      &.survival span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_camouflage.gif');
-        }
-      }
-    }
 
-    &.mage {
-      color: $wow-class-mage;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_mage.jpg');
-      }
-      &.arcane span {
+      &.druid {
+        color: $wow-class-druid;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_magicalsentry.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_druid.jpg');
+        }
+        &.balance span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_starfall.gif');
+          }
+        }
+        &.feral span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_druid_catform.gif');
+          }
+        }
+        &.guardian span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_racial_bearform.gif');
+          }
+        }
+        &.restoration span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_healingtouch.gif');
+          }
         }
       }
-      &.fire span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_fire_firebolt02.gif');
-        }
-      }
-      &.frost span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_frost_frostbolt02.gif');
-        }
-      }
-    }
 
-    &.monk {
-      color: $wow-class-monk;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_monk.jpg');
-      }
-      &.brewmaster span {
+      &.hunter {
+        color: $wow-class-hunter;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/monk_stance_drunkenox.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_hunter.jpg');
+        }
+        &.beast span {
+          &:before {
+            // background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_beastialdiscipline.gif');
+          }
+        }
+        &.marksmanship span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_focusedaim.gif');
+          }
+        }
+        &.survival span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_camouflage.gif');
+          }
         }
       }
-      &.mistweaver span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/monk_stance_wiseserpent.gif');
-        }
-      }
-      &.windwalker span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/monk_stance_whitetiger.gif');
-        }
-      }
-    }
 
-    &.paladin {
-      color: $wow-class-paladin;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_paladin.jpg');
-      }
-      &.holy span {
+      &.mage {
+        color: $wow-class-mage;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_holybolt.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_mage.jpg');
+        }
+        &.arcane span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_magicalsentry.gif');
+          }
+        }
+        &.fire span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_fire_firebolt02.gif');
+          }
+        }
+        &.frost span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_frost_frostbolt02.gif');
+          }
         }
       }
-      &.protection span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_paladin_shieldofthetemplar.gif');
-        }
-      }
-      &.retribution span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_auraoflight.gif');
-        }
-      }
-    }
 
-    &.priest {
-      color: $wow-class-priest;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_priest.jpg');
-      }
-      &.discipline span {
+      &.monk {
+        color: $wow-class-monk;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_powerwordshield.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_monk.jpg');
+        }
+        &.brewmaster span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/monk_stance_drunkenox.gif');
+          }
+        }
+        &.mistweaver span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/monk_stance_wiseserpent.gif');
+          }
+        }
+        &.windwalker span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/monk_stance_whitetiger.gif');
+          }
         }
       }
-      &.holy span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_guardianspirit.gif');
-        }
-      }
-      &.shadow span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_shadowwordpain.gif');
-        }
-      }
-    }
 
-    &.rogue {
-      color: $wow-class-rogue;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_rogue.jpg');
-      }
-      &.assassination span {
+      &.paladin {
+        color: $wow-class-paladin;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_rogue_eviscerate.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_paladin.jpg');
+        }
+        &.holy span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_holybolt.gif');
+          }
+        }
+        &.protection span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_paladin_shieldofthetemplar.gif');
+          }
+        }
+        &.retribution span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_auraoflight.gif');
+          }
         }
       }
-      &.combat span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_backstab.gif');
-        }
-      }
-      &.subtlety span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_stealth.gif');
-        }
-      }
-    }
 
-    &.shaman {
-      color: $wow-class-shaman;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_shaman.jpg');
-      }
-      &.elemental span {
+      &.priest {
+        color: $wow-class-priest;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_lightning.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_priest.jpg');
+        }
+        &.discipline span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_powerwordshield.gif');
+          }
+        }
+        &.holy span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_holy_guardianspirit.gif');
+          }
+        }
+        &.shadow span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_shadowwordpain.gif');
+          }
         }
       }
-      &.enhancement span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_lightningshield.gif');
-        }
-      }
-      &.restoration span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_magicimmunity.gif');
-        }
-      }
-    }
 
-    &.warlock {
-      color: $wow-class-warlock;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_warlock.jpg');
-      }
-      &.affliction span {
+      &.rogue {
+        color: $wow-class-rogue;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_deathcoil.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_rogue.jpg');
+        }
+        &.assassination span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_rogue_eviscerate.gif');
+          }
+        }
+        &.combat span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_backstab.gif');
+          }
+        }
+        &.subtlety span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_stealth.gif');
+          }
         }
       }
-      &.demonology span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_metamorphosis.gif');
-        }
-      }
-      &.destruction span {
-        &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_rainoffire.gif');
-        }
-      }
-    }
 
-    &.warrior {
-      color: $wow-class-warrior;
-      &:before {
-        background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_warrior.jpg');
-      }
-      &.arms span {
+      &.shaman {
+        color: $wow-class-shaman;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_warrior_savageblow.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_shaman.jpg');
+        }
+        &.elemental span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_lightning.gif');
+          }
+        }
+        &.enhancement span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_lightningshield.gif');
+          }
+        }
+        &.restoration span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_nature_magicimmunity.gif');
+          }
         }
       }
-      &.fury span {
+
+      &.warlock {
+        color: $wow-class-warlock;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_warrior_innerrage.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_warlock.jpg');
+        }
+        &.affliction span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_deathcoil.gif');
+          }
+        }
+        &.demonology span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_metamorphosis.gif');
+          }
+        }
+        &.destruction span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_rainoffire.gif');
+          }
         }
       }
-      &.protection span {
+
+      &.warrior {
+        color: $wow-class-warrior;
         &:before {
-          background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_warrior_defensivestance.gif');
+          background-image: url('http://wow.zamimg.com/images/wow/icons/medium/classicon_warrior.jpg');
+        }
+        &.arms span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_warrior_savageblow.gif');
+          }
+        }
+        &.fury span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_warrior_innerrage.gif');
+          }
+        }
+        &.protection span {
+          &:before {
+            background-image: url('http://wow.zamimg.com/images/wow/icons/tiny/ability_warrior_defensivestance.gif');
+          }
         }
       }
     }
